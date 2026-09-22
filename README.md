@@ -1,8 +1,39 @@
-# XpathLocatorStrategies
+# 1. XpathLocatorStrategies
 
 This is a set of notes for Xpaths, from the Udemy Course ['XPath locators for Selenium'](https://www.udemy.com/course/xpath-locators-for-selenium/) by 'Dmitry Shyshkin'.
 
-## Sección 1 - Recursos útiles del curso.
+- [1. XpathLocatorStrategies](#1-xpathlocatorstrategies)
+  - [1.1. Sección 1 - Recursos útiles del curso.](#11-sección-1---recursos-útiles-del-curso)
+    - [1.1.1. Shortcuts de Teclado](#111-shortcuts-de-teclado)
+  - [1.2. Sección 2](#12-sección-2)
+    - [1.2.1. Xpath Meaning](#121-xpath-meaning)
+    - [1.2.2. XPATH Formula:](#122-xpath-formula)
+    - [1.2.3. Estrategias de localización:](#123-estrategias-de-localización)
+    - [1.2.4. Inspector de Elementos](#124-inspector-de-elementos)
+    - [1.2.5. Terminlogía de los XPaths](#125-terminlogía-de-los-xpaths)
+    - [1.2.6. Sintaxis Básica de XPath](#126-sintaxis-básica-de-xpath)
+    - [1.2.7. Diferencia entre '/' vs '//' vs './' vs '..//'](#127-diferencia-entre--vs--vs--vs-)
+      - [1.2.7.1. Ejemplo 1:](#1271-ejemplo-1)
+      - [1.2.7.2. Ejemplo 2:](#1272-ejemplo-2)
+    - [1.2.8. Diferencia entre 'Position' e 'Index'](#128-diferencia-entre-position-e-index)
+    - [1.2.9. XPaths Functions - TEXT](#129-xpaths-functions---text)
+    - [1.2.10. XPath Functions - contains](#1210-xpath-functions---contains)
+    - [1.2.11. XPath Function - Starts with](#1211-xpath-function---starts-with)
+    - [1.2.12. XPath Function - NOT](#1212-xpath-function---not)
+  - [1.3. Seccion 3](#13-seccion-3)
+    - [1.3.1. Operador - OR](#131-operador---or)
+    - [1.3.2. Operador - AND](#132-operador---and)
+    - [1.3.3. Wildcards](#133-wildcards)
+    - [1.3.4. XPath Axes](#134-xpath-axes)
+    - [1.3.5. Elementos relativos a otros elementos.](#135-elementos-relativos-a-otros-elementos)
+    - [1.3.6. Seleccionar varios Xpaths simultáneamente](#136-seleccionar-varios-xpaths-simultáneamente)
+    - [1.3.7. SVG WebElements](#137-svg-webelements)
+    - [1.3.8. Detener la página Web](#138-detener-la-página-web)
+  - [1.4. Seccion 4](#14-seccion-4)
+  - [1.5. Seccion 5](#15-seccion-5)
+
+
+## 1.1. Sección 1 - Recursos útiles del curso.
 
 <details>
 
@@ -37,7 +68,7 @@ This is a set of notes for Xpaths, from the Udemy Course ['XPath locators for Se
 
 </details>
 
-### Shortcuts de Teclado
+### 1.1.1. Shortcuts de Teclado
 
 <details>
 
@@ -61,13 +92,13 @@ En el explorador Google CHROME:
 
 ---
 
-## Sección 2
+## 1.2. Sección 2
 
 <details>
 
 <summary>Seccion 2: XPath Basics</summary>
 
-### Xpath Meaning
+### 1.2.1. Xpath Meaning
 
 <details>
 
@@ -77,7 +108,7 @@ XML Path  Language it's a Query Language for selecting **nodes** from a XML doc
 
 </details>
 
-### XPATH Formula:
+### 1.2.2. XPATH Formula:
 
 <details>
 
@@ -89,7 +120,7 @@ XML Path  Language it's a Query Language for selecting **nodes** from a XML doc
 
 </details>
 
-### Estrategias de localización:
+### 1.2.3. Estrategias de localización:
 
 <details>
 
@@ -121,7 +152,7 @@ WebElement searchBox = (WebElement)js.executeScript("return document.getElements
 
 </details>
 
-### Inspector de Elementos
+### 1.2.4. Inspector de Elementos
 
 <details>
 
@@ -139,7 +170,7 @@ WebElement searchBox = (WebElement)js.executeScript("return document.getElements
 
 </details>
 
-### Terminlogía de los XPaths
+### 1.2.5. Terminlogía de los XPaths
 
 <details>
 
@@ -171,7 +202,7 @@ WebElement searchBox = (WebElement)js.executeScript("return document.getElements
 
 </details>
 
-### Sintaxis Básica de XPath
+### 1.2.6. Sintaxis Básica de XPath
 
 <details>
 
@@ -200,7 +231,7 @@ WebElement searchBox = (WebElement)js.executeScript("return document.getElements
 
 </details>
 
-### Diferencia entre '/' vs '//' vs './' vs '..//'
+### 1.2.7. Diferencia entre '/' vs '//' vs './' vs '..//'
 
 <details>
 
@@ -213,7 +244,7 @@ WebElement searchBox = (WebElement)js.executeScript("return document.getElements
     - Usado para crear XPaths Absolutos
     - Abreviación de 'Child Node' - Nodo Hijo
 
-#### Ejemplo 1:
+#### 1.2.7.1. Ejemplo 1:
 
 ```
 /HTML/Body
@@ -231,7 +262,7 @@ El elemento raíz `HTML` contiene 2 hijos, `HEAD`y `BODY`
     - Para 'XPaths Relativos'
     - Selecciona un elemento en cualquier lugar de la página.
 
-#### Ejemplo 2:
+#### 1.2.7.2. Ejemplo 2:
 
 - Usando un elemento relativo, vamos buscando todos los elementos hijos en el árbol del DOM hasta encontrar los de tipo 'INPUT'.
 
@@ -323,7 +354,7 @@ public class RelativeXpathTests extends BaseTest {
 
 </details>
 
-### Diferencia entre 'Position' e 'Index'
+### 1.2.8. Diferencia entre 'Position' e 'Index'
 
 <details>
 
@@ -502,7 +533,7 @@ Por que, a diferencia de INDEX, con `POSITION` podemos jugar con los `punteros`.
 
 </details>
 
-### XPaths Functions - TEXT
+### 1.2.9. XPaths Functions - TEXT
 
 ---
 
@@ -542,7 +573,7 @@ Por que, a diferencia de INDEX, con `POSITION` podemos jugar con los `punteros`.
 
 ---
 
-### XPath Functions - contains
+### 1.2.10. XPath Functions - contains
 
 <details>
 
@@ -609,7 +640,7 @@ $x("//p[contains(text(),'This page is created')]")
 
 ---
 
-### XPath Function - Starts with
+### 1.2.11. XPath Function - Starts with
 
 <details>
 
@@ -658,7 +689,7 @@ Por ejemplo, para el elemento:
 
 ---
 
-### XPath Function - NOT
+### 1.2.12. XPath Function - NOT
 
 <details>
 
@@ -725,7 +756,7 @@ Por ejemplo, para el elemento:
 
 ---
 
-## Seccion 3
+## 1.3. Seccion 3
 
 <details>
 
@@ -733,7 +764,7 @@ Por ejemplo, para el elemento:
 
 ---
 
-### Operador - OR
+### 1.3.1. Operador - OR
 
 <details>
 
@@ -785,7 +816,7 @@ Por ejemplo, para el elemento:
 
 ---
 
-### Operador - AND
+### 1.3.2. Operador - AND
 
 <details>
 
@@ -839,7 +870,7 @@ style="display: none;"
 
 ---
 
-### Wildcards
+### 1.3.3. Wildcards
 
 <details>
 
@@ -874,7 +905,7 @@ style="display: none;"
 
 ---
 
-### XPath Axes
+### 1.3.4. XPath Axes
 
 <details>
 
@@ -1008,7 +1039,7 @@ Esto es importante, por que queremos siempre elegir al elemento mas cercano y pa
 
 ---
 
-### Elementos relativos a otros elementos.
+### 1.3.5. Elementos relativos a otros elementos.
 
 <details>
 
@@ -1089,7 +1120,7 @@ Da esto:
 
 ---
 
-### Seleccionar varios Xpaths simultáneamente
+### 1.3.6. Seleccionar varios Xpaths simultáneamente
 
 <details>
 
@@ -1131,7 +1162,7 @@ Da esto:
 
 ---
 
-### SVG WebElements
+### 1.3.7. SVG WebElements
 <details>
 
 <summary>SVG</summary>
@@ -1182,7 +1213,7 @@ Da esto:
 </details>
 
 
-### Detener la página Web
+### 1.3.8. Detener la página Web
 
 <details>
 
@@ -1234,7 +1265,7 @@ Da esto:
 
 ---
 
-## Seccion 4
+## 1.4. Seccion 4
 
 <details>
 
@@ -1248,7 +1279,7 @@ You can add an image or a code block, too.
 
 ---
 
-## Seccion 5
+## 1.5. Seccion 5
 
 <details>
 
